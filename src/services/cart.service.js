@@ -1,7 +1,7 @@
 import Cart from "../models/Cart.js";
 
-// TODO: fix for correct camel case
-const addProdintoCart = async (req, res) => {
+// TODO: fix for correct camel case. snake case
+const addProdntoCart = async (req, res) => {
   const newCart = new Cart(req.body);
 
   try {
