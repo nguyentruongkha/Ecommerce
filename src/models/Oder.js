@@ -1,27 +1,29 @@
 import mongoose from "mongoose";
 
-const OderS = new mongoose.Schema({
-    name:{
-        type: String,
+// FIXME: Wrong schema
+const OderS = new mongoose.Schema(
+  {
+    name: {
+      type: String,
     },
     id: {
-        type: Number,
-        default: 1
+      type: Number,
+      default: 1,
     },
-    stock:{type: Number},
-    category:{type: String,require:true},
+    stock: { type: Number },
+    category: { type: String, require: true },
     price: {
-        type: Number,
-        require: true,
+      type: Number,
+      require: true,
     },
     img: {
-        type: Buffer,
+      type: Buffer,
     },
-status: {type: String, default: 'pending'}
-},
- {timestamps: true}
-)
+    status: { type: String, default: "pending" },
+  },
+  { timestamps: true }
+);
 
-const Order = mongoose.model('Order', OderS)
+const Order = mongoose.model("Order", OderS);
 
-export default Order
+export default Order;
