@@ -18,13 +18,15 @@ const addOder = async (req, res) => {
     category: req.body.category,
   });
 
+  const a = [];
+
   const prodIdinCart = await Cart.map((prod) => prod.id);
   const product = await Product.findOne({ id: { $in: prodIdinCart } });
 
-  for (let i = 0; i <= product.lenght(); i++) {
+  for (let i = 0; i <= product.length; i++) {
     if (add.category === product[i].category) {
       if (add.stock > product[i].stock) {
-        req.send("Can not oder because out stock");
+        req.send("Can not order because out stock");
       }
       break;
     }
